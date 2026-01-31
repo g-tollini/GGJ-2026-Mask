@@ -645,10 +645,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 5240531233133259593}
     m_Modifications:
     - target: {fileID: 2254641101978964701, guid: 41d044a0f4226b14f9fc9bbf6576cbcf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.84044707
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254641101978964701, guid: 41d044a0f4226b14f9fc9bbf6576cbcf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.953
       objectReference: {fileID: 0}
@@ -1018,6 +1014,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48251b7e0461dea4280abd7e1e4536b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorOpen
+  rb: {fileID: 0}
+  playerCol: {fileID: 0}
 --- !u!4 &9041965902972619869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0021a466a6abbfb428b1e23a48c5d808, type: 3}
