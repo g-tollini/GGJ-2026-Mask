@@ -587,7 +587,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 458631390610428757, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.029
+      value: -2.19168
       objectReference: {fileID: 0}
     - target: {fileID: 458631390610428757, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_LocalPosition.y
@@ -595,11 +595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458631390610428757, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.2858
+      value: 5.1784167
       objectReference: {fileID: 0}
     - target: {fileID: 458631390610428757, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99774384
       objectReference: {fileID: 0}
     - target: {fileID: 458631390610428757, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_LocalRotation.x
@@ -607,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458631390610428757, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.067136586
       objectReference: {fileID: 0}
     - target: {fileID: 458631390610428757, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_LocalRotation.z
@@ -619,7 +619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458631390610428757, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -7.699
       objectReference: {fileID: 0}
     - target: {fileID: 458631390610428757, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -628,6 +628,14 @@ PrefabInstance:
     - target: {fileID: 5546822847495859334, guid: 479af0aa819423e4f924a5704486c114, type: 3}
       propertyPath: m_Name
       value: Ventilator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807859491274232434, guid: 479af0aa819423e4f924a5704486c114, type: 3}
+      propertyPath: strength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807859491274232434, guid: 479af0aa819423e4f924a5704486c114, type: 3}
+      propertyPath: wobbliness
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
