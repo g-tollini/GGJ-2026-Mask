@@ -23,6 +23,11 @@ public class IsoTPSController : MonoBehaviour
     public float acceleration = 20f;
     public float deceleration = 25f;
 
+    [Header("Punch")]
+    public float punchRange = 1f;
+    public float punchSphereRadius = 1f;
+    public float punchForce = 500f;
+
     [Header("Facing")]
     [Tooltip("Si ON, le perso s'oriente vers la souris (raycast).")]
     public bool faceMouse = true;
@@ -257,5 +262,31 @@ public class IsoTPSController : MonoBehaviour
     {
         if (!enableJump) return;
         if (value.isPressed) jumpPressed = true;
+    }
+
+    public void OnAttack(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            Debug.Log($"punch {value}");
+            var center = transform.position + transform.forward * punchRange ;
+            var hitColliders = Physics.OverlapSphere(center, punchSphereRadius);
+            foreach (var collider in hitColliders)
+            {
+                var body = collider.attachedRigidbody;
+                if (body != null)
+                {
+                    Debug.Log($"body touched {body.name}");
+                    body.AddForce(transform.forward * punchForce);
+                }
+            }
+        }
+    }
+
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        var center = transform.position + transform.forward * punchRange;
+        Gizmos.DrawWireSphere(center, punchSphereRadius);
     }
 }

@@ -752,6 +752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7459154440514468769, guid: 0e41680b211913e448f467a68d486c76, type: 3}
+      propertyPath: punchForce
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 8348791783316392302, guid: 0e41680b211913e448f467a68d486c76, type: 3}
       propertyPath: m_Actions
       value: 
@@ -759,6 +763,10 @@ PrefabInstance:
     - target: {fileID: 8348791783316392302, guid: 0e41680b211913e448f467a68d486c76, type: 3}
       propertyPath: m_DefaultActionMap
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348791783316392302, guid: 0e41680b211913e448f467a68d486c76, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8516416623228188944, guid: 0e41680b211913e448f467a68d486c76, type: 3}
       propertyPath: m_LocalPosition.x
