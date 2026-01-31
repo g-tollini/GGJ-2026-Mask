@@ -294,13 +294,26 @@ public class IsoTPSController : MonoBehaviour
     {
         if (collider == null) return;
 
-        this.grabbedObject = collider.gameObject;
-        var rb = grabbedObject.GetComponent<Rigidbody>();
+        var rb = GetGrabbedRigidbody(collider);
+        this.grabbedObject = rb.gameObject;
         rb.isKinematic = true;
         rb.linearVelocity = Vector3.zero;
 
         grabbedObject.transform.SetParent(grabbingCollider.transform);
         grabbedObject.transform.localPosition = new Vector3(0, 0, grabbingDelta);
+    }
+
+    private Rigidbody GetGrabbedRigidbody(Collider collider)
+    {
+        try
+        {
+            var rb = collider.GetComponent<Rigidbody>();
+            return rb == null ? collider.GetComponentInParent<Rigidbody>() : rb;
+        }
+        catch (MissingComponentException)
+        {
+            return collider.GetComponentInParent<Rigidbody>();
+        }
     }
 
     public void OnInteract(InputValue value)
