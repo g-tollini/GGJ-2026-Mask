@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 3846375847684170343}
   - component: {fileID: 343872021430058555}
   - component: {fileID: 6807859491274232434}
+  - component: {fileID: -5653396134585879911}
   m_Layer: 0
   m_Name: Ventilator
   m_TagString: Untagged
@@ -189,6 +190,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UprightSpring
   strength: 30
   wobbliness: 0.6
+  maxRecoverAngle: 35
+--- !u!208 &-5653396134585879911
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5546822847495859334}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &9028310844352197724
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 923978772770323664}
   - component: {fileID: 570994362256958377}
   - component: {fileID: 8815412295533645344}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1695147054156663352}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7320180416348355144}
   - component: {fileID: 6860812206821809574}
-  m_Layer: 0
+  - component: {fileID: -6472846098317344015}
+  m_Layer: 3
   m_Name: Table3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,6 +206,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &-6472846098317344015
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7653495044038550200}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &3767769957265911067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,6 +285,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 31b03aeec9cefc34f86bdaeb04e4cdd9, type: 3}
       propertyPath: m_Name
       value: tableroulante
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 31b03aeec9cefc34f86bdaeb04e4cdd9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

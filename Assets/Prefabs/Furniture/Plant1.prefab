@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4571653342814065917}
   - component: {fileID: 7970588618228333698}
-  m_Layer: 0
+  - component: {fileID: -418357906900107859}
+  m_Layer: 3
   m_Name: Plant1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,6 +62,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &-418357906900107859
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051522706417477480}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5717871080901548724
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +90,7 @@ GameObject:
   - component: {fileID: 829504407006514722}
   - component: {fileID: 300316038540492941}
   - component: {fileID: 1296861860044972926}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7384677257425020406}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,6 +285,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 62fdd67c1bf04964db705dec3a924ae1, type: 3}
       propertyPath: m_Name
       value: plant1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 62fdd67c1bf04964db705dec3a924ae1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
