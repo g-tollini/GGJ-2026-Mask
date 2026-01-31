@@ -3184,8 +3184,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1668531913}
   - {fileID: 900822347}
+  - {fileID: 1668531913}
   - {fileID: 593366323}
   - {fileID: 1780512291}
   - {fileID: 1560188151}
@@ -4464,10 +4464,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant1
       objectReference: {fileID: 0}
-    - target: {fileID: 1051522706417477480, guid: 6068b44020887eb4e8b2c5032bd0f406, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4571653342814065917, guid: 6068b44020887eb4e8b2c5032bd0f406, type: 3}
       propertyPath: m_LocalScale.x
       value: 11.721
@@ -4482,7 +4478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4571653342814065917, guid: 6068b44020887eb4e8b2c5032bd0f406, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.25028
+      value: 10.53
       objectReference: {fileID: 0}
     - target: {fileID: 4571653342814065917, guid: 6068b44020887eb4e8b2c5032bd0f406, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24947,7 +24943,11 @@ PrefabInstance:
     - target: {fileID: 8532403176899311225, guid: ce326feef7668ea4ea43bf10596491de, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 62e7a3821226acb449dc65d3cb61f36c, type: 2}
+      objectReference: {fileID: 23800000, guid: 983769d2c8c122a4d87e5f616b636c01, type: 2}
+    - target: {fileID: 8532403176899311225, guid: ce326feef7668ea4ea43bf10596491de, type: 3}
+      propertyPath: m_UseGeometry
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8532403176899311225, guid: ce326feef7668ea4ea43bf10596491de, type: 3}
       propertyPath: m_OverrideVoxelSize
       value: 1
