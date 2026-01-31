@@ -29,7 +29,7 @@ public class IsoTPSController : MonoBehaviour
     public float punchForce = 500f;
 
     [Header("Grab")]
-    public SphereCollider grabbingCollider;
+    public BoxCollider grabbingCollider;
     public float grabbingDelta = 0.5f;
 
     [Header("Facing")]
@@ -278,7 +278,7 @@ public class IsoTPSController : MonoBehaviour
     {
         if (value.isPressed)
         {
-            var hitColliders = Physics.OverlapSphere(grabbingCollider.transform.position, grabbingCollider.radius);
+            var hitColliders = Physics.OverlapBox(grabbingCollider.transform.position, grabbingCollider.size / 2);
             foreach (var collider in hitColliders)
             {
                 var body = collider.attachedRigidbody;
@@ -322,7 +322,7 @@ public class IsoTPSController : MonoBehaviour
         {
             if (grabbedObject == null)
             {
-                var hitColliders = Physics.OverlapSphere(grabbingCollider.transform.position, grabbingCollider.radius, LayerMask.GetMask("Grabbable"));
+                var hitColliders = Physics.OverlapBox(grabbingCollider.transform.position, grabbingCollider.size / 2, Quaternion.identity, LayerMask.GetMask("Grabbable"));
                 ;
                 if (hitColliders.Length > 0)
                 {
