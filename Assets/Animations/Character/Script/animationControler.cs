@@ -26,7 +26,7 @@ public class animationControler : MonoBehaviour
 
         bool forwardPressed = Keyboard.current.wKey.isPressed;
         bool runPressed = Keyboard.current.leftShiftKey.isPressed;
-        bool attackPressed = Keyboard.current.fKey.isPressed;
+        bool attackPressed = Keyboard.current.fKey.wasPressedThisFrame;
         
         if(!isWalking && forwardPressed && !attackPressed)
         {
