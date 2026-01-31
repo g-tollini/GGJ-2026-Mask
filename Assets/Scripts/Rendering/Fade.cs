@@ -12,9 +12,9 @@ public class Fade : MonoBehaviour
     FadeCollider fadeCollider;
     BoxCollider boxCollider;
 
-    Renderer rend;
-    MaterialPropertyBlock mpb;
-    Color initialColor;
+    Renderer[] renderers;
+    MaterialPropertyBlock[] mpbs;
+    Color[] initialColors;
 
     void Update()
     {
@@ -31,18 +31,27 @@ public class Fade : MonoBehaviour
 
     void ApplyAlpha(float alpha)
     {
-        if (rend == null)
+        if (renderers == null)
         {
-            rend = GetComponent<Renderer>();
-            mpb = new MaterialPropertyBlock();
-            var mat = rend.sharedMaterial;
-            initialColor = (mat != null && mat.HasProperty(BaseColorId)) ? mat.GetColor(BaseColorId) : Color.white;
+            renderers = GetComponentsInChildren<Renderer>();
+            mpbs = new MaterialPropertyBlock[renderers.Length];
+            initialColors = new Color[renderers.Length];
+            for( int i = 0; i < mpbs.Length; i++)
+            {
+                var mat = renderers[i].sharedMaterial;
+                mpbs[i] = new MaterialPropertyBlock();
+                initialColors[i] = (mat != null && mat.HasProperty(BaseColorId)) ? mat.GetColor(BaseColorId) : Color.white;
+            }
         }
 
-        rend.GetPropertyBlock(mpb);
-        Color c = initialColor; 
-        c.a = alpha;
-        mpb.SetColor(BaseColorId, c);
-        rend.SetPropertyBlock(mpb);
+        for (int i = 0; i < mpbs.Length; i++)
+        {
+
+            renderers[i].GetPropertyBlock(mpbs[i]);
+            Color c = initialColors[i];
+            c.a = alpha;
+            mpbs[i].SetColor(BaseColorId, c);
+            renderers[i].SetPropertyBlock(mpbs[i]);
+        }
     }
 }
