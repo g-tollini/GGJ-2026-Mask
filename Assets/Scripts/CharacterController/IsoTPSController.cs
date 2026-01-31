@@ -83,6 +83,8 @@ public class IsoTPSController : MonoBehaviour
             cameraOffset = followCamera.position - transform.position;
             cameraRotation = followCamera.rotation;
         }
+
+        InGameUI.enabled = false;
     }
 
     void Update()
@@ -288,5 +290,31 @@ public class IsoTPSController : MonoBehaviour
         Gizmos.color = Color.yellow;
         var center = transform.position + transform.forward * punchRange;
         Gizmos.DrawWireSphere(center, punchSphereRadius);
+    }
+
+    public Canvas InGameUI;
+
+    public void OnEscape(InputValue value)
+    {
+        InGameUI.enabled = !InGameUI.enabled;
+    }
+
+    public void MainMenu()
+    {
+        var mainMenu = FindFirstObjectByType<MainMenu>();
+        if (mainMenu != null)
+        {
+            mainMenu.enabled = true;
+            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Game");
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single);
+        }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
