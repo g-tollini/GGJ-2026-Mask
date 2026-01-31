@@ -227,6 +227,9 @@ MonoBehaviour:
   moveSpeed: 5.5
   acceleration: 20
   deceleration: 25
+  punchRange: 1
+  punchSphereRadius: 1
+  punchAction: {fileID: 0}
   faceMouse: 1
   rotationSpeed: 12
   aimMask:
@@ -257,6 +260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
   m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_NotificationBehavior: 0
+  m_Actions: {fileID: 0}
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
