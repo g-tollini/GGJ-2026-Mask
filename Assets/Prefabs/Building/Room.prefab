@@ -688,6 +688,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porte
       objectReference: {fileID: 0}
+    - target: {fileID: 5829472675042120264, guid: 41d044a0f4226b14f9fc9bbf6576cbcf, type: 3}
+      propertyPath: m_Size.z
+      value: 2.9034755
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829472675042120264, guid: 41d044a0f4226b14f9fc9bbf6576cbcf, type: 3}
+      propertyPath: m_Center.x
+      value: 0.018099604
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829472675042120264, guid: 41d044a0f4226b14f9fc9bbf6576cbcf, type: 3}
+      propertyPath: m_Center.z
+      value: 0.03024181
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
