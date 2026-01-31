@@ -1,5 +1,7 @@
 // ChatGPT
 
+using System.Linq;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,9 +26,11 @@ public class IsoTPSController : MonoBehaviour
     public float deceleration = 25f;
 
     [Header("Punch")]
-    public float punchRange = 1f;
-    public float punchSphereRadius = 1f;
     public float punchForce = 500f;
+
+    [Header("Grab")]
+    public SphereCollider grabbingCollider;
+    public float grabbingDelta = 0.5f;
 
     [Header("Facing")]
     [Tooltip("Si ON, le perso s'oriente vers la souris (raycast).")]
@@ -67,6 +71,10 @@ public class IsoTPSController : MonoBehaviour
     // Motion state
     private Vector3 horizontalVelocity;
     private float verticalVelocity;
+
+    // Grabbing
+    private GameObject grabbedObject;
+
 
     void Awake()
     {
@@ -270,26 +278,52 @@ public class IsoTPSController : MonoBehaviour
     {
         if (value.isPressed)
         {
-            Debug.Log($"punch {value}");
-            var center = transform.position + transform.forward * punchRange ;
-            var hitColliders = Physics.OverlapSphere(center, punchSphereRadius);
+            var hitColliders = Physics.OverlapSphere(grabbingCollider.transform.position, grabbingCollider.radius);
             foreach (var collider in hitColliders)
             {
                 var body = collider.attachedRigidbody;
                 if (body != null)
                 {
-                    Debug.Log($"body touched {body.name}");
                     body.AddForce(transform.forward * punchForce);
                 }
             }
         }
     }
 
-    public void OnDrawGizmosSelected()
+    private void Grab(Collider collider)
     {
-        Gizmos.color = Color.yellow;
-        var center = transform.position + transform.forward * punchRange;
-        Gizmos.DrawWireSphere(center, punchSphereRadius);
+        if (collider == null) return;
+
+        this.grabbedObject = collider.gameObject;
+        var rb = grabbedObject.GetComponent<Rigidbody>();
+        rb.isKinematic = true;
+        rb.linearVelocity = Vector3.zero;
+
+        grabbedObject.transform.SetParent(grabbingCollider.transform);
+        grabbedObject.transform.localPosition = new Vector3(0, 0, grabbingDelta);
+    }
+
+    public void OnInteract(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            if (grabbedObject == null)
+            {
+                var hitColliders = Physics.OverlapSphere(grabbingCollider.transform.position, grabbingCollider.radius, LayerMask.GetMask("Grabbable"));
+                ;
+                if (hitColliders.Length > 0)
+                {
+                    var toGrab = hitColliders[0];
+                    this.Grab(toGrab);
+                }
+            }
+            else
+            {
+                grabbedObject.transform.SetParent(null); 
+                grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+                grabbedObject = null;
+            }
+        }
     }
 
     public Canvas InGameUI;
