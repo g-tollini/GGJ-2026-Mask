@@ -36,22 +36,24 @@ public class Fade : MonoBehaviour
             renderers = GetComponentsInChildren<Renderer>();
             mpbs = new MaterialPropertyBlock[renderers.Length];
             initialColors = new Color[renderers.Length];
-            for( int i = 0; i < mpbs.Length; i++)
+            for (int i = 0; i < mpbs.Length; i++)
             {
                 var mat = renderers[i].sharedMaterial;
                 mpbs[i] = new MaterialPropertyBlock();
                 initialColors[i] = (mat != null && mat.HasProperty(BaseColorId)) ? mat.GetColor(BaseColorId) : Color.white;
             }
         }
-
-        for (int i = 0; i < mpbs.Length; i++)
+        else
         {
+            for (int i = 0; i < renderers.Length; i++)
+            {
 
-            renderers[i].GetPropertyBlock(mpbs[i]);
-            Color c = initialColors[i];
-            c.a = alpha;
-            mpbs[i].SetColor(BaseColorId, c);
-            renderers[i].SetPropertyBlock(mpbs[i]);
+                renderers[i].GetPropertyBlock(mpbs[i]);
+                Color c = initialColors[i];
+                c.a = alpha;
+                mpbs[i].SetColor(BaseColorId, c);
+                renderers[i].SetPropertyBlock(mpbs[i]);
+            }
         }
     }
 }
