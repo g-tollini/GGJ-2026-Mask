@@ -297,6 +297,7 @@ public class IsoTPSController : MonoBehaviour
     public void OnEscape(InputValue value)
     {
         InGameUI.enabled = !InGameUI.enabled;
+        GetComponent<PlayerInput>().SwitchCurrentActionMap(InGameUI.enabled ? "UI" : "Player");
     }
 
     public void MainMenu()
