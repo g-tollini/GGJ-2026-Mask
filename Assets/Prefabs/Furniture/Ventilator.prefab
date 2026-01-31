@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4494201325296855388}
   - component: {fileID: 5284272666637598344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BodyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 343872021430058555}
   - component: {fileID: 6807859491274232434}
   - component: {fileID: -5653396134585879911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ventilator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933240778415518930}
   - component: {fileID: 7145208107793494343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CastersCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,9 +320,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2797864980895152918, guid: 961abf107f3233a4ab7a62b65d09a684, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -344004081357383697, guid: 961abf107f3233a4ab7a62b65d09a684, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8140499575222096, guid: 961abf107f3233a4ab7a62b65d09a684, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 961abf107f3233a4ab7a62b65d09a684, type: 3}
       propertyPath: m_Name
       value: Ventilator
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 961abf107f3233a4ab7a62b65d09a684, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022215874312191456, guid: 961abf107f3233a4ab7a62b65d09a684, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

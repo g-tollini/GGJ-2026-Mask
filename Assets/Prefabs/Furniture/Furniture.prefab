@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8743196801447372131}
   - component: {fileID: 3808052186223095114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Furniture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4204102322735166806}
   - component: {fileID: 1650039509100042060}
   - component: {fileID: 8093153924980641604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2392009536021391086}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,6 +268,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1c735528f887a834ebb0ca25204169f2, type: 3}
       propertyPath: m_Name
       value: distributeur
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1c735528f887a834ebb0ca25204169f2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
