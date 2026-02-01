@@ -10,15 +10,29 @@ public class GameObjectives : MonoBehaviour
         destroyable.Destroy();
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void TriggerWin(Collider col)
     {
-        
+        if (col.GetComponent<IsoTPSController>() != null)
+        {
+            Win();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TriggerLose(Collider col)
     {
-        
+        if (col.GetComponent<IsoTPSController>() != null)
+        {
+            Lose();
+        }
+    }
+
+    public void Win()
+    {
+        Debug.Log("You Win!");
+    }
+
+    public void Lose()
+    {
+        Debug.Log("You Lose!");
     }
 }
