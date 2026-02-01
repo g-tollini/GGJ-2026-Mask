@@ -5527,6 +5527,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7320180416348355144, guid: 4330450a1073757419292f32aeb6390b, type: 3}
   m_PrefabInstance: {fileID: 292350660}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &297096784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Move
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
 --- !u!1 &300633834
 GameObject:
   m_ObjectHideFlags: 0
@@ -7995,6 +8009,54 @@ PrefabInstance:
     - target: {fileID: 1256354392884811053, guid: 441a0616727284f48992c490533632c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: walkAction
+      value: 
+      objectReference: {fileID: 297096784}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: attackAction
+      value: 
+      objectReference: {fileID: 1933946384}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: walkAction.m_Name
+      value: Walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: walkAction.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: attackAction.m_Name
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: walkAction.m_ExpectedControlType
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: walkAction.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: attackAction.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: walkAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 2a3524b8-77ba-4631-9827-37d16ac7e11f
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: attackAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 30f3e373-1c5e-40fb-a912-ca366d0e3dcc
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: walkAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267745468785828497, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: attackAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Attack
       objectReference: {fileID: 0}
     - target: {fileID: 3887782275629540789, guid: 441a0616727284f48992c490533632c6, type: 3}
       propertyPath: DamageCount
@@ -31007,6 +31069,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 479af0aa819423e4f924a5704486c114, type: 3}
+--- !u!114 &1933946384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Attack
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
 --- !u!4 &1935904559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5165297939514235879, guid: 362812fcc91dfe144a40a8365f1a7b5a, type: 3}
