@@ -35,6 +35,7 @@ public class IsoTPSController : MonoBehaviour
     [Header("Facing")]
     [Tooltip("Si ON, le perso s'oriente vers la souris (raycast).")]
     public bool faceMouse = true;
+    bool usingKeyboard = false;
 
     [Tooltip("Vitesse de rotation vers la souris.")]
     public float rotationSpeed = 18f;
@@ -74,7 +75,6 @@ public class IsoTPSController : MonoBehaviour
 
     // Grabbing
     private GameObject grabbedObject;
-
 
     void Awake()
     {
@@ -142,13 +142,15 @@ public class IsoTPSController : MonoBehaviour
         );
 
         // 5) Rotation: vers la souris (si activé), sinon vers la direction de mouvement
-        if (faceMouse)
+        if (faceMouse && usingKeyboard)
         {
             RotateTowardMouse();
         }
-        else
+
+        if (lookDir.sqrMagnitude > 0.01f)
         {
-            RotateTowardMovement();
+            Quaternion targetRot = Quaternion.LookRotation(lookDir, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
         }
 
         // 6) Déplacement
@@ -187,38 +189,13 @@ public class IsoTPSController : MonoBehaviour
         if (Mouse.current == null) return;
 
         Vector2 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = Camera.main != null
-            ? Camera.main.ScreenPointToRay(mousePos)
-            : new Ray(followCamera.position, followCamera.forward);
+        Ray ray = Camera.main != null ? Camera.main.ScreenPointToRay(mousePos) : new Ray(followCamera.position, followCamera.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, aimMaxDistance, aimMask, QueryTriggerInteraction.Ignore))
         {
             Vector3 lookPoint = hit.point;
-            Vector3 dir = lookPoint - transform.position;
-            dir.y = 0f;
-
-            if (dir.sqrMagnitude > 0.0001f)
-            {
-                Quaternion targetRot = Quaternion.LookRotation(dir, Vector3.up);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
-            }
-        }
-        else
-        {
-            // Fallback: si pas de hit (aimMask mal réglé), ne change pas la rotation
-            // (ou tu peux viser un plan à hauteur du joueur si tu préfères)
-        }
-    }
-
-    private void RotateTowardMovement()
-    {
-        Vector3 faceDir = horizontalVelocity;
-        faceDir.y = 0f;
-
-        if (faceDir.sqrMagnitude > 0.001f)
-        {
-            Quaternion targetRot = Quaternion.LookRotation(faceDir, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
+            lookDir = lookPoint - transform.position;
+            lookDir.y = 0f;
         }
     }
 
@@ -260,12 +237,28 @@ public class IsoTPSController : MonoBehaviour
             pushDir.z * pushPower
         );
     }
+    void OnActionTriggered(InputAction.CallbackContext ctx)
+    {
+        usingKeyboard = ctx.control.device is not Gamepad;
+    }
 
     // ---- PlayerInput (Send Messages) ----
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
         moveInput = Vector2.ClampMagnitude(moveInput, 1f);
+    }
+
+    Vector3 lookDir;
+
+    public void OnLook(InputValue value)
+    {
+        if (!usingKeyboard)
+        {
+            Vector2 lookInput = value.Get<Vector2>();
+            if (lookInput.sqrMagnitude > 0.1f)
+                lookDir = new Vector3(lookInput.x, 0f, lookInput.y);
+        }
     }
 
     public void OnJump(InputValue value)
@@ -332,7 +325,7 @@ public class IsoTPSController : MonoBehaviour
             }
             else
             {
-                grabbedObject.transform.SetParent(null); 
+                grabbedObject.transform.SetParent(null);
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
                 grabbedObject = null;
             }
