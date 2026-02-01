@@ -20,38 +20,53 @@ public class NPC_animationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isWalking = animator.GetBool(isWalkingHash);
-        bool isAttacking = animator.GetBool(isAttackingHash);
-        bool isDead = animator.GetBool(isDeadHash);
-
         bool walkAction = Keyboard.current.wKey.isPressed;     //mettre ici ce qui active l'anime de marche
         bool attackAction = Keyboard.current.fKey.wasPressedThisFrame;   //mettre ici ce qui active l'anime d'attack
         bool deathAction = Keyboard.current.qKey.isPressed;     //mettre ici ce qui active l'anime de mort
 
-        if(deathAction)
+        walk_animation(walkAction);
+        attack_animation(attackAction);
+        death_animation(deathAction);
+    }
+
+    public void walk_animation(bool shoudlWalk)
+    {
+        bool isWalking = animator.GetBool(isWalkingHash);
+        
+        if(shoudlWalk && !isWalking)
+        {
+            animator.SetBool(isWalkingHash,true);
+        }
+        if(!shoudlWalk && isWalking)
+        {
+            animator.SetBool(isWalkingHash,false);
+        }
+    }
+
+    public void attack_animation(bool shouldAttack)
+    {
+        bool isAttacking = animator.GetBool(isAttackingHash);
+        
+        if(shouldAttack)
+        {
+            animator.SetBool(isAttackingHash,true);
+        } 
+        else
+            animator.SetBool(isAttackingHash,false);
+
+
+    }
+
+    public void death_animation(bool shoudDie)
+    {
+        bool isDead = animator.GetBool(isDeadHash);
+
+        if(shoudDie && !isDead)
         {
             animator.SetBool(isDeadHash,true);
         }
         else
             animator.SetBool(isDeadHash,false);
-        
-        if(walkAction && !isWalking)
-        {
-            animator.SetBool(isWalkingHash,true);
-        }
-        if(!walkAction && isWalking)
-        {
-            animator.SetBool(isWalkingHash,false);
-        }
-
-        if(attackAction)
-        {
-            animator.SetBool(isAttackingHash,true);
-            isAttacking = false;
-        } 
-        else
-            animator.SetBool(isAttackingHash,false);
-
         
     }
 }

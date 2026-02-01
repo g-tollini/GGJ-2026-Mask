@@ -5,7 +5,6 @@ public class animationControler : MonoBehaviour
 {
     Animator animator;
     int isWalkingHash;
-    int isRunningHash;
     int isAttackingHash;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -13,56 +12,47 @@ public class animationControler : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         isWalkingHash = Animator.StringToHash("isWalking");
-        isRunningHash = Animator.StringToHash("isRunning");
         isAttackingHash = Animator.StringToHash("isAttacking");
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool isWalking = animator.GetBool(isWalkingHash);
-        bool isRunning = animator.GetBool(isRunningHash);
-        bool isAttacking = animator.GetBool(isAttackingHash);
-
         bool forwardPressed = Keyboard.current.wKey.isPressed;
-        bool runPressed = Keyboard.current.leftShiftKey.isPressed;
         bool attackPressed = Keyboard.current.fKey.wasPressedThisFrame;
         
-        if(!isWalking && forwardPressed && !attackPressed)
+        if(forwardPressed)
+            walk_animation(true);
+        else
+            walk_animation(false);
+
+        if(attackPressed)
+            attack_animation(true);
+        else
+            attack_animation(false);
+    }
+
+    public void walk_animation(bool shouldWalk){
+        bool isWalking = animator.GetBool(isWalkingHash);
+
+        if(!isWalking && shouldWalk)
         {
             animator.SetBool(isWalkingHash,true);
         }
-        if (attackPressed || (isWalking && !forwardPressed))
+        if (isWalking && !shouldWalk)
         {
             animator.SetBool(isWalkingHash,false);
         }
+    }
 
-        if(!isRunning && !attackPressed && (forwardPressed && runPressed))
-        {
-            animator.SetBool(isRunningHash,true);
-        }
+    public void attack_animation(bool shouldAttack){
+        bool isAttacking = animator.GetBool(isAttackingHash);
 
-        if(attackPressed || (isRunning && (!forwardPressed || !runPressed)))
-        {
-            animator.SetBool(isRunningHash,false);
-        }
-
-        if(attackPressed)
+        if(shouldAttack && !isAttacking)
         {
             animator.SetBool(isAttackingHash,true);
-            isAttacking = false;
         } 
         else
             animator.SetBool(isAttackingHash,false);
-        /*if(!isAttacking && attackPressed)
-        {
-            animator.SetBool(isAttackingHash,true);
-            //animator.SetBool(isRunningHash,false);
-            //animator.SetBool(isWalkingHash,false);
-        }
-        if(isAttacking && !attackPressed)
-        {
-            animator.SetBool(isAttackingHash,false);
-        }*/
     }
 }
