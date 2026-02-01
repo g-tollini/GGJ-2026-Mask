@@ -4829,6 +4829,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: ventilator
+      value: 
+      objectReference: {fileID: 1782305173}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
       objectReference: {fileID: 0}
@@ -8377,6 +8381,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: ventilator
+      value: 
+      objectReference: {fileID: 1782305173}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
       objectReference: {fileID: 0}
@@ -10174,6 +10182,10 @@ PrefabInstance:
       propertyPath: behavior
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: ventilator
+      value: 
+      objectReference: {fileID: 1782305173}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
@@ -13428,7 +13440,7 @@ PrefabInstance:
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: ventilator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1782305173}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
@@ -15060,7 +15072,7 @@ PrefabInstance:
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: ventilator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1782305173}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
@@ -15381,6 +15393,10 @@ PrefabInstance:
       propertyPath: objectives
       value: 
       objectReference: {fileID: 432394634}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: ventilator
+      value: 
+      objectReference: {fileID: 1782305173}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
@@ -16917,7 +16933,7 @@ PrefabInstance:
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1725621733}
+      objectReference: {fileID: 0}
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Win
@@ -20067,6 +20083,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 432394634}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: ventilator
+      value: 
+      objectReference: {fileID: 1782305173}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
       objectReference: {fileID: 0}
@@ -21647,6 +21667,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 432394634}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: ventilator
+      value: 
+      objectReference: {fileID: 1782305173}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
       objectReference: {fileID: 0}
@@ -21788,6 +21812,10 @@ PrefabInstance:
       propertyPath: behavior
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: ventilator
+      value: 
+      objectReference: {fileID: 1782305173}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
@@ -22481,7 +22509,7 @@ PrefabInstance:
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1725621733}
+      objectReference: {fileID: 0}
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Win
@@ -23351,71 +23379,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7870842907479378946, guid: cd226637f51ac3d4b9e140b49770520e, type: 3}
   m_PrefabInstance: {fileID: 1459365354}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1460147376
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 542613142}
-    m_Modifications:
-    - target: {fileID: 103911785571556740, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_Name
-      value: VentilatorVieux
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.3897
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.9299998
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421136109951135703, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8659106035535092902, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 880014770}
-    - target: {fileID: 8659106035535092902, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
-      propertyPath: offensive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
 --- !u!1001 &1460719853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23726,7 +23689,7 @@ PrefabInstance:
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: ventilator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1782305173}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
@@ -23975,11 +23938,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5136cd7e584c394428415ef477564880, type: 3}
---- !u!4 &1490248361 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8949652788996883927, guid: 5f948f52ad7f56641832a45656289c88, type: 3}
-  m_PrefabInstance: {fileID: 1070263723}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1490686287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27801,17 +27759,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6656707199884133767, guid: 64d889db3ebcd734992097e808a272ef, type: 3}
   m_PrefabInstance: {fileID: 662367520}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1725621733 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3887782275629540789, guid: 441a0616727284f48992c490533632c6, type: 3}
-  m_PrefabInstance: {fileID: 432394633}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c340342b8e90c849ae99353e0c39337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameObjectives
 --- !u!1001 &1735109885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28638,6 +28585,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8949652788996883927, guid: 5f948f52ad7f56641832a45656289c88, type: 3}
   m_PrefabInstance: {fileID: 1164910940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1782305173 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9118062107486798599, guid: 441a0616727284f48992c490533632c6, type: 3}
+  m_PrefabInstance: {fileID: 432394633}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1784982811 stripped
 Transform:
@@ -31665,6 +31617,10 @@ PrefabInstance:
       propertyPath: objectives
       value: 
       objectReference: {fileID: 432394634}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: ventilator
+      value: 
+      objectReference: {fileID: 1782305173}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0

@@ -72,7 +72,6 @@ public class FollowTarget : MonoBehaviour
                     if (agent.remainingDistance <= MinDistance + minDistanceFromVentilator)
                     {
                         stoppingVentilatorTime -= Time.deltaTime;
-                        Debug.Log($"Killing {stoppingVentilatorTime} sec");
                     }
                     else
                     {
@@ -88,7 +87,6 @@ public class FollowTarget : MonoBehaviour
 
             if (stoppingVentilatorTime <= 0)
             {
-                Debug.Log("YOU DIED");
                 objectives.Lose();
             }
         }
