@@ -35,7 +35,6 @@ public class IsoTPSController : MonoBehaviour
     [Header("Facing")]
     [Tooltip("Si ON, le perso s'oriente vers la souris (raycast).")]
     public bool faceMouse = true;
-    bool usingKeyboard = false;
 
     [Tooltip("Vitesse de rotation vers la souris.")]
     public float rotationSpeed = 18f;
@@ -76,7 +75,10 @@ public class IsoTPSController : MonoBehaviour
     // Grabbing
     private GameObject grabbedObject;
 
-    public GameObjectives objectives;
+    private animationControler anim;
+
+    [SerializeField] private AudioClip missSoundClip;
+    [SerializeField] private AudioClip[] hitSoundClips;
 
     void Awake()
     {
@@ -95,7 +97,6 @@ public class IsoTPSController : MonoBehaviour
         }
 
         InGameUI.enabled = false;
-        GameOverlay.enabled = true;
     }
 
     void Update()
@@ -144,18 +145,14 @@ public class IsoTPSController : MonoBehaviour
             accel * Time.deltaTime
         );
 
-        usingKeyboard = Gamepad.all.Count == 0;
-
         // 5) Rotation: vers la souris (si activé), sinon vers la direction de mouvement
-        if (faceMouse && usingKeyboard)
+        if (faceMouse)
         {
             RotateTowardMouse();
         }
-
-        if (lookDir.sqrMagnitude > 0.01f)
+        else
         {
-            Quaternion targetRot = Quaternion.LookRotation(lookDir, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
+            RotateTowardMovement();
         }
 
         // 6) Déplacement
@@ -194,13 +191,38 @@ public class IsoTPSController : MonoBehaviour
         if (Mouse.current == null) return;
 
         Vector2 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = Camera.main != null ? Camera.main.ScreenPointToRay(mousePos) : new Ray(followCamera.position, followCamera.forward);
+        Ray ray = Camera.main != null
+            ? Camera.main.ScreenPointToRay(mousePos)
+            : new Ray(followCamera.position, followCamera.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, aimMaxDistance, aimMask, QueryTriggerInteraction.Ignore))
         {
             Vector3 lookPoint = hit.point;
-            lookDir = lookPoint - transform.position;
-            lookDir.y = 0f;
+            Vector3 dir = lookPoint - transform.position;
+            dir.y = 0f;
+
+            if (dir.sqrMagnitude > 0.0001f)
+            {
+                Quaternion targetRot = Quaternion.LookRotation(dir, Vector3.up);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
+            }
+        }
+        else
+        {
+            // Fallback: si pas de hit (aimMask mal réglé), ne change pas la rotation
+            // (ou tu peux viser un plan à hauteur du joueur si tu préfères)
+        }
+    }
+
+    private void RotateTowardMovement()
+    {
+        Vector3 faceDir = horizontalVelocity;
+        faceDir.y = 0f;
+
+        if (faceDir.sqrMagnitude > 0.001f)
+        {
+            Quaternion targetRot = Quaternion.LookRotation(faceDir, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
         }
     }
 
@@ -250,26 +272,17 @@ public class IsoTPSController : MonoBehaviour
         moveInput = Vector2.ClampMagnitude(moveInput, 1f);
     }
 
-    Vector3 lookDir;
-
-    public void OnLook(InputValue value)
-    {
-        if (!usingKeyboard)
-        {
-            Vector2 lookInput = value.Get<Vector2>();
-            if (lookInput.sqrMagnitude > 0.1f)
-                lookDir = new Vector3(lookInput.x, 0f, lookInput.y);
-        }
-    }
-
     public void OnJump(InputValue value)
     {
         if (!enableJump) return;
         if (value.isPressed) jumpPressed = true;
     }
 
+    
+
     public void OnAttack(InputValue value)
     {
+        int TouchedItem = 0;
         if (value.isPressed)
         {
             var hitColliders = Physics.OverlapBox(grabbingCollider.transform.position, grabbingCollider.size / 2);
@@ -278,17 +291,15 @@ public class IsoTPSController : MonoBehaviour
                 var body = collider.attachedRigidbody;
                 if (body != null)
                 {
+                    SoundFXManager.instance.PlayRandomSoundFXClip(hitSoundClips, transform,1f);
                     body.AddForce(transform.forward * punchForce);
-
-                    var destroyable = body.GetComponent<Destroyable>();
-                    Debug.Log(body.gameObject.name);
-                    if (destroyable != null)
-                    {
-                        objectives.Destroyed(destroyable);
-                    }
+                    TouchedItem++;
                 }
             }
         }
+        if(TouchedItem == 0)
+            SoundFXManager.instance.PlaySoundFXClip(missSoundClip,transform,1f);
+        TouchedItem=0;
     }
 
     private void Grab(Collider collider)
@@ -333,7 +344,7 @@ public class IsoTPSController : MonoBehaviour
             }
             else
             {
-                grabbedObject.transform.SetParent(null);
+                grabbedObject.transform.SetParent(null); 
                 grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
                 grabbedObject = null;
             }
@@ -341,12 +352,10 @@ public class IsoTPSController : MonoBehaviour
     }
 
     public Canvas InGameUI;
-    public Canvas GameOverlay;
 
     public void OnEscape(InputValue value)
     {
         InGameUI.enabled = !InGameUI.enabled;
-        GameOverlay.enabled = !InGameUI.enabled;
         GetComponent<PlayerInput>().SwitchCurrentActionMap(InGameUI.enabled ? "UI" : "Player");
     }
 
