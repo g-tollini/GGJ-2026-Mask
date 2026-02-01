@@ -94,6 +94,8 @@ MonoBehaviour:
   Price: 2200
   WobbleIntensity: 0.02
   WobbleRate: 20
+  finalShrinkScale: {x: 0.9, y: 0.3, z: 0.9}
+  finallyDestroyed: 0
 --- !u!1 &5669277601858064484
 GameObject:
   m_ObjectHideFlags: 0

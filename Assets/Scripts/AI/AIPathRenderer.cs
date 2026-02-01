@@ -50,4 +50,12 @@ public class AIPathRenderer : MonoBehaviour
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        foreach (var pipe in pipes)
+        {
+            GameObject.Destroy(pipe);
+        }
+    }
 }

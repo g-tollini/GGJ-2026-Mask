@@ -11,7 +11,7 @@ public enum AgentBehavior
 [RequireComponent(typeof(NavMeshAgent))]
 public class FollowTarget : MonoBehaviour
 {
-    Transform target;
+    public Transform target;
     public Transform ventilator;
     public Transform[] randomRooms;
     public float MinDistance = 1.5f;

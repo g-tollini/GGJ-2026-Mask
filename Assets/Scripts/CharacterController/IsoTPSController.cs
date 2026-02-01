@@ -78,6 +78,11 @@ public class IsoTPSController : MonoBehaviour
 
     public GameObjectives objectives;
 
+    private animationControler anim;
+
+    [SerializeField] private AudioClip missSoundClip;
+    [SerializeField] private AudioClip[] hitSoundClips;
+
     void Awake()
     {
         cc = GetComponent<CharacterController>();
@@ -270,25 +275,32 @@ public class IsoTPSController : MonoBehaviour
 
     public void OnAttack(InputValue value)
     {
+        int TouchedItem = 0;
         if (value.isPressed)
         {
             var hitColliders = Physics.OverlapBox(grabbingCollider.transform.position, grabbingCollider.size / 2);
             foreach (var collider in hitColliders)
             {
+                var destroyable = collider.GetComponent<Destroyable>();
+                if (destroyable != null)
+                    objectives.Destroyed(destroyable);
+
                 var body = collider.attachedRigidbody;
                 if (body != null)
                 {
+                    SoundFXManager.instance.PlayRandomSoundFXClip(hitSoundClips, transform,1f);
+                    TouchedItem++;
                     body.AddForce(transform.forward * punchForce);
-
-                    var destroyable = body.GetComponent<Destroyable>();
-                    Debug.Log(body.gameObject.name);
-                    if (destroyable != null)
-                    {
-                        objectives.Destroyed(destroyable);
-                    }
+                }
+                else if (collider.GetComponent<Enemy>() != null)
+                {
+                    Destroy(collider.gameObject);
                 }
             }
         }
+        if(TouchedItem == 0)
+            SoundFXManager.instance.PlaySoundFXClip(missSoundClip,transform,1f);
+        TouchedItem=0;
     }
 
     private void Grab(Collider collider)
