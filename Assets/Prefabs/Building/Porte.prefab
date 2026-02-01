@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2254641101978964701}
   - component: {fileID: 1055010760651145165}
-  - component: {fileID: 7536411564042998441}
-  - component: {fileID: 5829472675042120264}
-  - component: {fileID: 5351362068930764809}
-  m_Layer: 0
+  - component: {fileID: 6552766897195125767}
+  - component: {fileID: 6548486006634074266}
+  - component: {fileID: 3151297328274069791}
+  m_Layer: 6
   m_Name: Porte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,46 +60,27 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7536411564042998441
-MonoBehaviour:
+--- !u!208 &6552766897195125767
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2876191612310169452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48251b7e0461dea4280abd7e1e4536b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorSlam
-  rb: {fileID: 1055010760651145165}
-  playerCol: {fileID: 0}
---- !u!65 &5829472675042120264
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2876191612310169452}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.6693679, y: 1.6505666, z: 1.9819784}
-  m_Center: {x: 0.018099606, y: 0.8806639, z: 0.4909908}
---- !u!114 &5351362068930764809
+  m_Shape: 1
+  m_Extents: {x: 1, y: 0.5, z: 0.05}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &6548486006634074266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,27 +89,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 2876191612310169452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: a876c3801a26a964cb7aaf847a9c37b3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
+  m_EditorClassIdentifier: Assembly-CSharp::OnCollision
+  CollidesWith:
+    serializedVersion: 2
+    m_Bits: 72
+  TriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3151297328274069791}
+        m_TargetAssemblyTypeName: Slam, Assembly-CSharp
+        m_MethodName: CollideSlam
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Enter:
     m_PersistentCalls:
       m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+--- !u!114 &3151297328274069791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2876191612310169452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d3d9395ad2a16409a34fe7c42d8aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Slam
+  target: {fileID: 0}
+  mode: 1
+  triggerOnce: 1
+  minImpulse: 20
 --- !u!1 &4150051929178077864
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8154688991177437841}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 1361286302562395656}
   - component: {fileID: 2525000764295678837}
   - component: {fileID: 2138872567840919199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,9 +333,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2797864980895152918, guid: ea148ec651aa5b94eb57853454f17de0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2113670006983759465, guid: ea148ec651aa5b94eb57853454f17de0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ea148ec651aa5b94eb57853454f17de0, type: 3}
       propertyPath: m_Name
       value: porteBleueQuiTombe3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ea148ec651aa5b94eb57853454f17de0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

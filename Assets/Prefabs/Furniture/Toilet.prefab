@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3436829438785372747}
   - component: {fileID: 3141606244014857348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Toilet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 2816566001967553151}
   - component: {fileID: 6959534996985316459}
   - component: {fileID: 8478513645952885717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2699108069013246954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,6 +268,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: da63b886308385e488ca14315a38bdd3, type: 3}
       propertyPath: m_Name
       value: toilet
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da63b886308385e488ca14315a38bdd3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
