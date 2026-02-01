@@ -93,6 +93,7 @@ public class IsoTPSController : MonoBehaviour
         }
 
         InGameUI.enabled = false;
+        GameOverlay.enabled = true;
     }
 
     void Update()
@@ -333,10 +334,12 @@ public class IsoTPSController : MonoBehaviour
     }
 
     public Canvas InGameUI;
+    public Canvas GameOverlay;
 
     public void OnEscape(InputValue value)
     {
         InGameUI.enabled = !InGameUI.enabled;
+        GameOverlay.enabled = !InGameUI.enabled;
         GetComponent<PlayerInput>().SwitchCurrentActionMap(InGameUI.enabled ? "UI" : "Player");
     }
 
