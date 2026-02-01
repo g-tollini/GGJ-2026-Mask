@@ -351,6 +351,8 @@ MonoBehaviour:
   Price: 2200
   WobbleIntensity: 0.02
   WobbleRate: 20
+  finalShrinkScale: 0.3
+  finallyDestroyed: 0
 --- !u!1001 &4709547314554658820
 PrefabInstance:
   m_ObjectHideFlags: 0
