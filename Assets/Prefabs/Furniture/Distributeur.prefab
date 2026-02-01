@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8743196801447372131}
   - component: {fileID: 3808052186223095114}
+  - component: {fileID: -3516552229140339602}
   m_Layer: 6
-  m_Name: Furniture
+  m_Name: Distributeur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,6 +62,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3516552229140339602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651989115006196699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2843388d26155f4ea8490f21288f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Destroyable
+  Price: 4569
+  WobbleIntensity: 0.02
+  WobbleRate: 20
+  finalShrinkScale: {x: 0.9, y: 0.3, z: 0.9}
+  finallyDestroyed: 0
 --- !u!1 &3335034842898013118
 GameObject:
   m_ObjectHideFlags: 0

@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8207728618966256473}
   - component: {fileID: 7428478307525275298}
+  - component: {fileID: 1586273365968235818}
   m_Layer: 0
   m_Name: TinyBanc
   m_TagString: Untagged
@@ -173,6 +174,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1586273365968235818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687029875129686882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2843388d26155f4ea8490f21288f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Destroyable
+  Price: 224
+  WobbleIntensity: 0.02
+  WobbleRate: 20
+  finalShrinkScale: {x: 0.9, y: 0.3, z: 0.9}
+  finallyDestroyed: 0
 --- !u!1 &8735663422495331236
 GameObject:
   m_ObjectHideFlags: 0
