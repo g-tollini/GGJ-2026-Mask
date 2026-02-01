@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3516985076660929365}
   - component: {fileID: 6389148497728655072}
   - component: {fileID: -1384126151745873310}
+  - component: {fileID: 8760614905404252822}
   m_Layer: 6
   m_Name: Bed2
   m_TagString: Untagged
@@ -79,6 +80,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &8760614905404252822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466146418571774401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2843388d26155f4ea8490f21288f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Destroyable
+  Price: 2200
 --- !u!1 &1575608403730491014
 GameObject:
   m_ObjectHideFlags: 0

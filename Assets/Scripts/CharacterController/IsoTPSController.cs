@@ -76,6 +76,8 @@ public class IsoTPSController : MonoBehaviour
     // Grabbing
     private GameObject grabbedObject;
 
+    public GameObjectives objectives;
+
     void Awake()
     {
         cc = GetComponent<CharacterController>();
@@ -93,6 +95,7 @@ public class IsoTPSController : MonoBehaviour
         }
 
         InGameUI.enabled = false;
+        GameOverlay.enabled = true;
     }
 
     void Update()
@@ -140,6 +143,8 @@ public class IsoTPSController : MonoBehaviour
             targetHorizontal,
             accel * Time.deltaTime
         );
+
+        usingKeyboard = Gamepad.all.Count == 0;
 
         // 5) Rotation: vers la souris (si activé), sinon vers la direction de mouvement
         if (faceMouse && usingKeyboard)
@@ -237,10 +242,6 @@ public class IsoTPSController : MonoBehaviour
             pushDir.z * pushPower
         );
     }
-    void OnActionTriggered(InputAction.CallbackContext ctx)
-    {
-        usingKeyboard = ctx.control.device is not Gamepad;
-    }
 
     // ---- PlayerInput (Send Messages) ----
     public void OnMove(InputValue value)
@@ -278,6 +279,13 @@ public class IsoTPSController : MonoBehaviour
                 if (body != null)
                 {
                     body.AddForce(transform.forward * punchForce);
+
+                    var destroyable = body.GetComponent<Destroyable>();
+                    Debug.Log(body.gameObject.name);
+                    if (destroyable != null)
+                    {
+                        objectives.Destroyed(destroyable);
+                    }
                 }
             }
         }
@@ -333,10 +341,12 @@ public class IsoTPSController : MonoBehaviour
     }
 
     public Canvas InGameUI;
+    public Canvas GameOverlay;
 
     public void OnEscape(InputValue value)
     {
         InGameUI.enabled = !InGameUI.enabled;
+        GameOverlay.enabled = !InGameUI.enabled;
         GetComponent<PlayerInput>().SwitchCurrentActionMap(InGameUI.enabled ? "UI" : "Player");
     }
 
