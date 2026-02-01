@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c340342b8e90c849ae99353e0c39337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameObjectives
-  DamageCount: 12575
+  DamageCount: 0
 --- !u!1 &2910262124834352806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,8 +1239,9 @@ MonoBehaviour:
     m_Bits: 4294967295
   enablePush: 1
   pushPower: 2
+  objectives: {fileID: 3887782275629540789}
   InGameUI: {fileID: 8264477585513755632}
-  GameOverlay: {fileID: 0}
+  GameOverlay: {fileID: 7842735733334162369}
 --- !u!114 &4104277985554877090
 MonoBehaviour:
   m_ObjectHideFlags: 0
