@@ -18598,6 +18598,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Text
       objectReference: {fileID: 0}
+    - target: {fileID: 7183459244649983020, guid: 186fe3bb280fdf748b3b88b06a2af8ed, type: 3}
+      propertyPath: m_text
+      value: "Mouse & Keyboard : \nZQSD/WASD = Move\nLook Toward Mouse Pointer\nLMB
+        = Punch\nE = Grab"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
