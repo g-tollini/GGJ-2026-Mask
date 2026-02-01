@@ -349,6 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Destroyable
   Price: 2200
+  WobbleIntensity: 0.02
+  WobbleRate: 20
 --- !u!1001 &4709547314554658820
 PrefabInstance:
   m_ObjectHideFlags: 0

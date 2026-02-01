@@ -7,7 +7,7 @@ public class GameObjectives : MonoBehaviour
     public void Destroyed(Destroyable destroyable)
     {
         DamageCount += destroyable.Price;
-        Destroy(destroyable.gameObject);
+        destroyable.Destroy();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
