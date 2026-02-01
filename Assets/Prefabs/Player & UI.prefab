@@ -1238,12 +1238,14 @@ MonoBehaviour:
     m_Bits: 4294967295
   enablePush: 1
   pushPower: 2
+  objectives: {fileID: 3887782275629540789}
   missSoundClip: {fileID: 8300000, guid: 38f2ea53811d9ee46b3f7ec8a052bd3d, type: 3}
   hitSoundClips:
   - {fileID: 8300000, guid: 7fae6abf9e831d34f988c20ca73b5465, type: 3}
   - {fileID: 8300000, guid: cbd5b0b457fa40149876375d9369a038, type: 3}
   - {fileID: 8300000, guid: 1faa06855bfc4624e93f608c5c086762, type: 3}
   InGameUI: {fileID: 8264477585513755632}
+  GameOverlay: {fileID: 7842735733334162369}
 --- !u!114 &4104277985554877090
 MonoBehaviour:
   m_ObjectHideFlags: 0
