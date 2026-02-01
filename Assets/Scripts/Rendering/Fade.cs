@@ -19,7 +19,12 @@ public class Fade : MonoBehaviour
     void Update()
     {
         if (fadeCollider == null)
+        {
             fadeCollider = FindFirstObjectByType<FadeCollider>();
+            if (fadeCollider == null)
+                enabled = false;
+            return;
+        }
 
         if (boxCollider == null)
             boxCollider = GetComponent<BoxCollider>();
