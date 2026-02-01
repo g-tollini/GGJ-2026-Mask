@@ -281,7 +281,6 @@ public class IsoTPSController : MonoBehaviour
                     body.AddForce(transform.forward * punchForce);
 
                     var destroyable = body.GetComponent<Destroyable>();
-                    Debug.Log(body.gameObject.name);
                     if (destroyable != null)
                     {
                         objectives.Destroyed(destroyable);
