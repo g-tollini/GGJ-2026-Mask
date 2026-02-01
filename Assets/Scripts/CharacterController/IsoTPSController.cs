@@ -281,18 +281,20 @@ public class IsoTPSController : MonoBehaviour
             var hitColliders = Physics.OverlapBox(grabbingCollider.transform.position, grabbingCollider.size / 2);
             foreach (var collider in hitColliders)
             {
+                var destroyable = collider.GetComponent<Destroyable>();
+                if (destroyable != null)
+                    objectives.Destroyed(destroyable);
+
                 var body = collider.attachedRigidbody;
                 if (body != null)
                 {
                     SoundFXManager.instance.PlayRandomSoundFXClip(hitSoundClips, transform,1f);
                     TouchedItem++;
                     body.AddForce(transform.forward * punchForce);
-
-                    var destroyable = body.GetComponent<Destroyable>();
-                    if (destroyable != null)
-                    {
-                        objectives.Destroyed(destroyable);
-                    }
+                }
+                else if (collider.GetComponent<Enemy>() != null)
+                {
+                    Destroy(collider.gameObject);
                 }
             }
         }
