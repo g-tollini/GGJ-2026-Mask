@@ -13,18 +13,18 @@ public class FollowTarget : MonoBehaviour
 {
     public Transform target;
     public Transform ventilator;
-    public Transform[] randomRooms;
     public float MinDistance = 1.5f;
     public float minDistanceFromVentilator = 1.5f;
     public float minDistanceFromPlayer = 1.5f;
     public float MaxDistance = 10f;
     public AgentBehavior behavior;
-    NavMeshAgent agent;
     public bool offensive = true;
 
     public GameObjectives objectives;
-
     public float stoppingVentilatorDelay = 10;
+
+    Transform[] randomRooms;
+    NavMeshAgent agent;
     private float stoppingVentilatorTime;
 
     void Start()
@@ -32,6 +32,8 @@ public class FollowTarget : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = MinDistance;
         stoppingVentilatorTime = stoppingVentilatorDelay;
+
+        randomRooms = objectives.randomRooms;
 
         switch (behavior)
         {
@@ -72,6 +74,7 @@ public class FollowTarget : MonoBehaviour
                     if (agent.remainingDistance <= MinDistance + minDistanceFromVentilator)
                     {
                         stoppingVentilatorTime -= Time.deltaTime;
+                        Debug.Log($"${gameObject.name} delay {stoppingVentilatorTime}");
                     }
                     else
                     {

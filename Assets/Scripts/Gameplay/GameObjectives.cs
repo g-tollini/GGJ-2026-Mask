@@ -9,6 +9,9 @@ public class GameObjectives : MonoBehaviour
 
     public float moneyLossAmount = 10f;
 
+    public Transform[] randomRooms;
+    public Transform ventilator;
+
     public void Destroyed(Destroyable destroyable)
     {
         DamageCount += destroyable.Price;
