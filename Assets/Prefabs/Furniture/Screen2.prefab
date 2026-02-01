@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 6860944380827547254}
   - component: {fileID: 4346681647289251915}
   - component: {fileID: 994651330275035806}
+  - component: {fileID: -3338172149805021897}
   m_Layer: 6
   m_Name: Screen2
   m_TagString: Untagged
@@ -190,6 +191,23 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &-3338172149805021897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5788745258316587582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2843388d26155f4ea8490f21288f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Destroyable
+  Price: 5700
+  WobbleIntensity: 0.02
+  WobbleRate: 20
+  finalShrinkScale: {x: 0.9, y: 0.3, z: 0.9}
+  finallyDestroyed: 0
 --- !u!1 &6519001072117803600
 GameObject:
   m_ObjectHideFlags: 0

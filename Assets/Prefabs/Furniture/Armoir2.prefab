@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7398315140971591745}
   - component: {fileID: 2698711308129848750}
   - component: {fileID: 4303531765295045843}
+  - component: {fileID: 5959922700435283738}
   m_Layer: 6
   m_Name: Armoir2
   m_TagString: Untagged
@@ -158,6 +159,23 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &5959922700435283738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875553604047105719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2843388d26155f4ea8490f21288f1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Destroyable
+  Price: 120
+  WobbleIntensity: 0.02
+  WobbleRate: 20
+  finalShrinkScale: {x: 0.9, y: 0.3, z: 0.9}
+  finallyDestroyed: 0
 --- !u!1001 &2762703489532414783
 PrefabInstance:
   m_ObjectHideFlags: 0
