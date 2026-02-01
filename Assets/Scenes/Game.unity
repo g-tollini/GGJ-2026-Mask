@@ -16928,15 +16928,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 432394634}
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Win
+      value: TriggerWin
       objectReference: {fileID: 0}
     - target: {fileID: 7043202256824442085, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: m_LocalScale.x
@@ -22567,15 +22567,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 432394634}
     - target: {fileID: 5490976013450141643, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: TriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Win
+      value: TriggerWin
       objectReference: {fileID: 0}
     - target: {fileID: 7043202256824442085, guid: 295e59de669bd9e4da21aa59dac12dc8, type: 3}
       propertyPath: m_LocalScale.x

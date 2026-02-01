@@ -33,15 +33,11 @@ public class GameObjectives : MonoBehaviour
 
     public void Win()
     {
-        Debug.Log("You Win!");
-
         SceneManager.LoadScene("CreditsScene", LoadSceneMode.Single);
     }
 
     public void Lose()
     {
-        Debug.Log("You Lose!");
-
         SceneManager.LoadScene(MainMenu.gameOverSceneName, LoadSceneMode.Single);
     }
 
