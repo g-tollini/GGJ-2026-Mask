@@ -140,7 +140,7 @@ MonoBehaviour:
   minDistanceFromVentilator: 1.5
   minDistanceFromPlayer: 1.5
   MaxDistance: 10
-  behavior: 0
+  behavior: 2
   offensive: 1
   objectives: {fileID: 0}
   stoppingVentilatorDelay: 10
