@@ -7922,6 +7922,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 250692144812781686, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: offensive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1256354392884811053, guid: 441a0616727284f48992c490533632c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.33
@@ -7962,6 +7966,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3887782275629540789, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: DamageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887782275629540789, guid: 441a0616727284f48992c490533632c6, type: 3}
+      propertyPath: moneyLossAmount
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 5113629865532372105, guid: 441a0616727284f48992c490533632c6, type: 3}
       propertyPath: m_Name
       value: Player & UI
@@ -7978,6 +7990,17 @@ PrefabInstance:
       addedObject: {fileID: 1122618923}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 441a0616727284f48992c490533632c6, type: 3}
+--- !u!114 &432394634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3887782275629540789, guid: 441a0616727284f48992c490533632c6, type: 3}
+  m_PrefabInstance: {fileID: 432394633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c340342b8e90c849ae99353e0c39337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameObjectives
 --- !u!1001 &432883536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10552,6 +10575,7 @@ Transform:
   - {fileID: 1411226150}
   - {fileID: 2060196885}
   - {fileID: 134282121}
+  - {fileID: 1070263724}
   m_Father: {fileID: 300633835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &593956068 stripped
@@ -13367,6 +13391,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: objectives
+      value: 
+      objectReference: {fileID: 432394634}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: ventilator
       value: 
       objectReference: {fileID: 1122618923}
@@ -14985,6 +15013,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: objectives
+      value: 
+      objectReference: {fileID: 432394634}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: ventilator
       value: 
       objectReference: {fileID: 1122618923}
@@ -15304,6 +15336,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 880014770}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: objectives
+      value: 
+      objectReference: {fileID: 432394634}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
@@ -16878,6 +16914,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f948f52ad7f56641832a45656289c88, type: 3}
+--- !u!4 &1070263724 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8949652788996883927, guid: 5f948f52ad7f56641832a45656289c88, type: 3}
+  m_PrefabInstance: {fileID: 1070263723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1074602700
 GameObject:
   m_ObjectHideFlags: 0
@@ -19881,6 +19922,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 880014770}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: objectives
+      value: 
+      objectReference: {fileID: 432394634}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
       objectReference: {fileID: 0}
@@ -21456,6 +21501,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 880014770}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: objectives
+      value: 
+      objectReference: {fileID: 432394634}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
@@ -23081,6 +23130,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 880014770}
+    - target: {fileID: 8659106035535092902, guid: 1187ae7c155411e47857db09bda07b6b, type: 3}
+      propertyPath: offensive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23384,6 +23437,10 @@ PrefabInstance:
       propertyPath: behavior
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: objectives
+      value: 
+      objectReference: {fileID: 432394634}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: ventilator
       value: 
@@ -31292,6 +31349,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 880014770}
     - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
+      propertyPath: objectives
+      value: 
+      objectReference: {fileID: 432394634}
+    - target: {fileID: 6010457567593505245, guid: 3a137c29d7fcada40a7ad228a17939fe, type: 3}
       propertyPath: MinDistance
       value: 0
       objectReference: {fileID: 0}
@@ -34125,3 +34186,21 @@ SceneRoots:
   - {fileID: 1468154176}
   - {fileID: 567762827}
   - {fileID: 778786416}
+  - {fileID: 1692612334}
+  - {fileID: 61763246}
+  - {fileID: 1703805076}
+  - {fileID: 1507683587}
+  - {fileID: 213454033}
+  - {fileID: 497285928}
+  - {fileID: 226959916}
+  - {fileID: 230463517}
+  - {fileID: 1659201069}
+  - {fileID: 1635231958}
+  - {fileID: 1735109885}
+  - {fileID: 1853229956}
+  - {fileID: 113284426}
+  - {fileID: 426735586}
+  - {fileID: 771680626}
+  - {fileID: 390640418}
+  - {fileID: 1097096482}
+  - {fileID: 569263377}

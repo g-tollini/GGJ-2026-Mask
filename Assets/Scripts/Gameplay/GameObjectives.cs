@@ -1,8 +1,12 @@
+using Unity.Mathematics;
+
 using UnityEngine;
 
 public class GameObjectives : MonoBehaviour
 {
     public float DamageCount = 0f;
+
+    public float moneyLossAmount = 10f;
 
     public void Destroyed(Destroyable destroyable)
     {
@@ -34,5 +38,11 @@ public class GameObjectives : MonoBehaviour
     public void Lose()
     {
         Debug.Log("You Lose!");
+    }
+
+    public void LoseMoney()
+    {
+        DamageCount -= moneyLossAmount;
+        DamageCount = math.max(DamageCount, 0);
     }
 }

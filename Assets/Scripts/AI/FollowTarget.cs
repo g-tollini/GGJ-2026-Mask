@@ -15,9 +15,14 @@ public class FollowTarget : MonoBehaviour
     public Transform ventilator;
     public Transform[] randomRooms;
     public float MinDistance = 1.5f;
+    public float minDistanceFromVentilator = 1.5f;
+    public float minDistanceFromPlayer = 1.5f;
     public float MaxDistance = 10f;
     public AgentBehavior behavior;
     NavMeshAgent agent;
+    public bool offensive = true;
+
+    public GameObjectives objectives;
 
     public float stoppingVentilatorDelay = 10;
     private float stoppingVentilatorTime;
@@ -50,37 +55,42 @@ public class FollowTarget : MonoBehaviour
         agent.SetDestination(target.position);
         gameObject.transform.LookAt(target.position);
 
-        switch (behavior)
+        if (offensive)
         {
+            switch (behavior)
+            {
 
-            case AgentBehavior.AttackPlayer:
-                if (agent.remainingDistance == MinDistance)
-                {
+                case AgentBehavior.AttackPlayer:
+                    if (agent.remainingDistance <= MinDistance + minDistanceFromPlayer)
+                    {
+                        objectives.LoseMoney();
+                    }
+                    break;
 
-                }
-                break;
+                case AgentBehavior.StopVentilator:
+                    target = ventilator;
+                    if (agent.remainingDistance <= MinDistance + minDistanceFromVentilator)
+                    {
+                        stoppingVentilatorTime -= Time.deltaTime;
+                        Debug.Log($"Killing {stoppingVentilatorTime} sec");
+                    }
+                    else
+                    {
+                        //stoppingVentilatorTime = stoppingVentilatorDelay;
+                    }
+                    break;
 
-            case AgentBehavior.StopVentilator:
-                target = ventilator;
-                if (agent.remainingDistance <= MinDistance + 1.5f)
-                {
-                    stoppingVentilatorTime -= Time.deltaTime;
-                    Debug.Log($"Killing {stoppingVentilatorTime} sec");
-                } else
-                {
-                    //stoppingVentilatorTime = stoppingVentilatorDelay;
-                }
-                break;
+                case AgentBehavior.Flee:
+                    target = randomRooms[Random.Range(0, randomRooms.Length)];
 
-            case AgentBehavior.Flee:
-                target = randomRooms[Random.Range(0, randomRooms.Length)];
+                    break;
+            }
 
-                break;
-        }
-
-        if (stoppingVentilatorTime <= 0)
-        {
-            Debug.Log("YOU DIED");
+            if (stoppingVentilatorTime <= 0)
+            {
+                Debug.Log("YOU DIED");
+                objectives.Lose();
+            }
         }
     }
 }
