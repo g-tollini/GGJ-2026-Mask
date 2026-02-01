@@ -37,7 +37,6 @@ public class animationControler : MonoBehaviour
         if (ctx.phase == InputActionPhase.Canceled)
         {
             walk_animation(false);
-            Debug.Log("ici");
         }
             
     }
