@@ -9,10 +9,13 @@ public class FollowTarget : MonoBehaviour
     public float MaxDistance = 10f;
     NavMeshAgent agent;
 
-    void Awake()
+    void Start()
     { 
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = MinDistance;
+
+        if (target == null)
+            target = FindFirstObjectByType<IsoTPSController>().transform;
     }
 
     void Update()
