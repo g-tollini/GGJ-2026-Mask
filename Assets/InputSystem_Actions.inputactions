@@ -321,7 +321,7 @@
                 {
                     "name": "",
                     "id": "d15e5ed9-43aa-442e-aa55-6443469d722d",
-                    "path": "<Keyboard>/f",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -490,6 +490,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ae33441-d792-4977-9732-ff37ee393d63",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Escape",
                     "isComposite": false,
                     "isPartOfComposite": false
